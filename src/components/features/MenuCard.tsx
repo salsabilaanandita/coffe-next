@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Image from "next/image";
 import { useState } from "react";
@@ -131,8 +131,7 @@ export function MenuCard({
   const Icon = catIcon[item.category];
 
   const isDrink =
-    item.category === "Kopi" ||
-    item.category === "Non-Kopi";
+    item.category === "Kopi";
 
   const sizePriceAdjustment =
     size === "Besar" ? 6000 : 0;
@@ -394,7 +393,7 @@ export function MenuCard({
               tone={
                 isGoldBadge
                   ? "gold"
-                  : item.tag === "Vegan"
+                  : item.tag === "Baru"
                     ? "mint"
                     : "parchment"
               }
