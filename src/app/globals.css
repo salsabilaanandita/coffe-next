@@ -1,0 +1,363 @@
+﻿@import "tailwindcss";
+
+@theme {
+  /* ========================================
+     KOPI RENGKUH — CALM & NATURAL PALETTE
+     ======================================== */
+
+  /* Soft Cream */
+  --color-cream-50: #f8f6ef;
+  --color-cream-100: #f1eee4;
+  --color-cream-200: #e7e3d6;
+  --color-cream-300: #d8d8c8;
+
+  /* Forest Green */
+  --color-forest: #3f5a4d;
+  --color-forest-dark: #2f463b;
+  --color-forest-light: #607568;
+  --color-forest-soft: #dfe7df;
+
+  /* Earth Brown */
+  --color-brown: #765b45;
+  --color-brown-dark: #5d4635;
+  --color-brown-light: #967b63;
+  --color-brown-soft: #e7ddd1;
+
+  /* Warm Sand */
+  --color-gold: #b59b6a;
+  --color-gold-light: #d5c6a3;
+  --color-gold-soft: #eee7d6;
+
+  /* Typography */
+  --color-ink: #30443a;
+  --color-ink-muted: #30443ab3;
+  --color-ink-light: #30443a80;
+
+  /* Fonts */
+  --font-display: var(--font-fraunces), Georgia, serif;
+
+  --font-sans:
+    var(--font-inter),
+    -apple-system,
+    BlinkMacSystemFont,
+    "SF Pro Text",
+    "Segoe UI",
+    system-ui,
+    sans-serif;
+
+  /* ========================================
+     SHADOWS
+     ======================================== */
+
+  --shadow-soft:
+    0 1px 3px rgba(48, 68, 58, 0.05),
+    0 5px 16px rgba(48, 68, 58, 0.045);
+
+  --shadow-card:
+    0 0 0 0.5px rgba(48, 68, 58, 0.08),
+    0 2px 7px rgba(48, 68, 58, 0.06);
+
+  --shadow-apple-product:
+    0 12px 30px -5px rgba(48, 68, 58, 0.12),
+    0 4px 10px -2px rgba(48, 68, 58, 0.05);
+
+  --shadow-frap:
+    0 0 6px rgba(48, 68, 58, 0.12),
+    0 8px 18px rgba(48, 68, 58, 0.09);
+}
+
+
+/* ========================================
+   BASE
+   ======================================== */
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    letter-spacing: -0.012em;
+  }
+
+  body {
+    background-color: var(--color-cream-50);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+
+  *:focus-visible {
+    outline: 2px solid var(--color-forest-light);
+    outline-offset: 3px;
+    border-radius: 9999px;
+  }
+
+  /* ========================================
+     FORM DEFAULT
+     Biar text tidak putih / nyaru
+     ======================================== */
+
+  label {
+    color: var(--color-ink);
+  }
+
+  input,
+  textarea,
+  select {
+    color: var(--color-ink);
+    background-color: #ffffff;
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: rgba(48, 68, 58, 0.38);
+  }
+
+  input:focus,
+  textarea:focus,
+  select:focus {
+    border-color: var(--color-forest);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(63, 90, 77, 0.1);
+  }
+}
+
+
+/* ========================================
+   STEAM & AROMA
+   ======================================== */
+
+@keyframes steam-rise-1 {
+  0% {
+    transform: translateY(0) scaleX(1) scaleY(1);
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 0.55;
+  }
+
+  50% {
+    transform: translateY(-16px) scaleX(1.15) scaleY(1.1);
+    opacity: 0.35;
+  }
+
+  100% {
+    transform: translateY(-36px) scaleX(1.35) scaleY(1.2);
+    opacity: 0;
+  }
+}
+
+@keyframes steam-rise-2 {
+  0% {
+    transform: translateY(0) scaleX(1) scaleY(1);
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 0.45;
+  }
+
+  55% {
+    transform: translateY(-20px) scaleX(0.9) scaleY(1.15);
+    opacity: 0.3;
+  }
+
+  100% {
+    transform: translateY(-42px) scaleX(1.2) scaleY(1.3);
+    opacity: 0;
+  }
+}
+
+@keyframes steam-rise-3 {
+  0% {
+    transform: translateY(0) scaleX(1);
+    opacity: 0;
+  }
+
+  25% {
+    opacity: 0.5;
+  }
+
+  60% {
+    transform: translateY(-18px) scaleX(1.2);
+    opacity: 0.25;
+  }
+
+  100% {
+    transform: translateY(-38px) scaleX(1.4);
+    opacity: 0;
+  }
+}
+
+
+/* ========================================
+   NATURAL FLOATING ELEMENTS
+   ======================================== */
+
+@keyframes float-bean-1 {
+  0%,
+  100% {
+    transform: translate(70px, 250px) rotate(-25deg) translateY(0);
+  }
+
+  50% {
+    transform: translate(70px, 250px) rotate(-20deg) translateY(-8px);
+  }
+}
+
+@keyframes float-bean-2 {
+  0%,
+  100% {
+    transform: translate(335px, 140px) rotate(30deg) translateY(0);
+  }
+
+  50% {
+    transform: translate(335px, 140px) rotate(36deg) translateY(-10px);
+  }
+}
+
+@keyframes float-leaf {
+  0%,
+  100% {
+    transform: translate(75px, 120px) rotate(-20deg) scale(1);
+  }
+
+  50% {
+    transform: translate(72px, 114px) rotate(-14deg) scale(1.04);
+  }
+}
+
+
+/* ========================================
+   SOFT AMBIENT MOTION
+   ======================================== */
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    opacity: 0.25;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.45;
+    transform: scale(1.03);
+  }
+}
+
+
+/* ========================================
+   MARQUEE
+   ======================================== */
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+
+/* ========================================
+   SOFT SHIMMER
+   ======================================== */
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+
+/* ========================================
+   ANIMATION UTILITIES
+   ======================================== */
+
+.animate-steam-1 {
+  animation: steam-rise-1 3.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  transform-origin: center bottom;
+}
+
+.animate-steam-2 {
+  animation: steam-rise-2 3.8s cubic-bezier(0.4, 0, 0.2, 1) infinite 0.7s;
+  transform-origin: center bottom;
+}
+
+.animate-steam-3 {
+  animation: steam-rise-3 3.5s cubic-bezier(0.4, 0, 0.2, 1) infinite 1.4s;
+  transform-origin: center bottom;
+}
+
+.animate-float-bean-1 {
+  animation: float-bean-1 4.5s ease-in-out infinite;
+}
+
+.animate-float-bean-2 {
+  animation: float-bean-2 5.2s ease-in-out infinite 0.5s;
+}
+
+.animate-float-leaf {
+  animation: float-leaf 6s ease-in-out infinite 1s;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 4s ease-in-out infinite;
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 28s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+.shimmer-text {
+  background: linear-gradient(
+    90deg,
+    #765b45 0%,
+    #d8d1c2 50%,
+    #765b45 100%
+  );
+
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: shimmer 5s linear infinite;
+}
+
+
+/* ========================================
+   REDUCED MOTION
+   ======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
